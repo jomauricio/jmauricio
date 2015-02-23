@@ -111,7 +111,7 @@ class Common(Configuration):
 
     # DATABASE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-    DATABASES = values.DatabaseURLValue('postgres://localhost/jmauricio')
+    DATABASES = values.DatabaseURLValue('postgres://postgres:postgres@localhost:5432/jmauricio')
     # END DATABASE CONFIGURATION
 
     # CACHING
