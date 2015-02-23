@@ -119,4 +119,9 @@ class Production(Common):
         CACHES = values.CacheURLValue(default="memcached://127.0.0.1:11211")
     # END CACHING
 
+    # DATABASE CONFIGURATION
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+    DATABASES = values.DatabaseURLValue('postgres://ncaiumntjttqjd:y8DO3Kvrh1CNlaNOotUEks254W@ec2-107-21-104-188.compute-1.amazonaws.com:5432/d1bikkt2kt2bvu')
+    # END DATABASE CONFIGURATION
+
     # Your production stuff: Below this line define 3rd party library settings
