@@ -38,10 +38,12 @@ class Common(Configuration):
     )
     THIRD_PARTY_APPS = (
         'crispy_forms',  # Form layouts
+        'crispy_forms_foundation', # foundation form layouts 
         'avatar',  # for user avatars
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'foundation', # foundation framework
     )
 
     # Apps specific for this project go here.
@@ -173,6 +175,9 @@ class Common(Configuration):
 
     # See: http://django-crispy-forms.readthedocs.org/en/latest/install.html#template-packs
     CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+    # Default layout to use with "crispy_forms"
+    #CRISPY_TEMPLATE_PACK = 'foundation-5'
     # END TEMPLATE CONFIGURATION
 
     # STATIC FILE CONFIGURATION

@@ -17,7 +17,8 @@ Vagrant.configure('2') do |config|
     # Forward the dev server port
     config.vm.network :forwarded_port, host: 8000, guest: 8000
     config.vm.network "forwarded_port", guest: 5432, host: 5432
-
+    config.vm.network "forwarded_port", guest: 35729, host: 35729
+    
     config.vm.provision "shell", inline: $setup
     config.vm.provision "shell", inline: $dependencies
 end
