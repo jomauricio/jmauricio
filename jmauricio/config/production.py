@@ -125,3 +125,9 @@ class Production(Common):
     # END DATABASE CONFIGURATION
 
     # Your production stuff: Below this line define 3rd party library settings
+
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
