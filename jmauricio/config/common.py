@@ -43,12 +43,14 @@ class Common(Configuration):
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'allauth.socialaccount.providers.facebook',
+        'allauth.socialaccount.providers.google',
         'foundation', # foundation framework
     )
 
     # Apps specific for this project go here.
     LOCAL_APPS = (
-        'users',  # custom users app
+        'apps.users',  # custom users app
         # Your stuff: custom apps go here
     )
 
@@ -232,6 +234,21 @@ class Common(Configuration):
     LOGIN_REDIRECT_URL = 'users:redirect'
     LOGIN_URL = 'account_login'
     # END Custom user app defaults
+
+    # PROVIDERS CONFIGURATION
+    SOCIALACCOUNT_PROVIDERS = \
+    {
+    'facebook':
+       {'SCOPE': ['email', 'publish_stream'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'METHOD': 'oauth2'
+        },
+    'google':
+        { 'SCOPE': ['profile', 'email'],
+          'AUTH_PARAMS': { 'access_type': 'online' } }
+    }
+
+    # END PROVIDERS CONFIGURATION
 
     # SLUGLIFIER
     AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'

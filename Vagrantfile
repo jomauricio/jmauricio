@@ -13,6 +13,11 @@ Vagrant.configure('2') do |config|
     config.vm.box = 'ubuntu/trusty64'
     #config.vm.box_url = "http://files.vagrantup.com/" + config.vm.box + ".box"
 
+    config.vm.provider "virtualbox" do |vb|
+     # Use VBoxManage to customize the VM. For example to change memory:
+     vb.customize ["modifyvm", :id, "--memory", "1024"]
+    end
+
     config.ssh.forward_agent = true
     # Forward the dev server port
     config.vm.network :forwarded_port, host: 8000, guest: 8000
